@@ -1,16 +1,15 @@
-%define		snap 20040629
 Summary:	Cal3D adapter for OpenSceneGraph
 Summary(pl):	Adapter Cal3D dla OpenSceneGraph
 Name:		osgcal
-Version:	0.1.4
-Release:	1.%{snap}.1
+Version:	0.1.28
+Release:	1
 License:	LGPL
 Group:		Libraries
-# from cvs.gna.org/cvs/underware
-Source0:	%{name}-%{snap}.tar.gz
-# Source0-md5:	d940588c9c74ab2812174cf5569c4967
-# Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://download.gna.org/underware/dists/%{name}-%{version}.tar.gz
+# Source0-md5:	8953cf2792ebf186762a879214972843
+Patch0:		%{name}-namespace.patch
 URL:		http://osgcal.sourceforge.net/
+BuildRequires:	OpenSceneGraph-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	docbook-utils
@@ -41,9 +40,11 @@ Header files for osgcal library.
 Pliki nag³ówkowe biblioteki osgcal.
 
 %prep
-%setup -q -n %{name}
+%setup -q
+%patch -p1
 
 %build
+%configure
 %{__make} \
 	CXXFLAGS="-I../../include -I../include %{rpmcflags}"
 
@@ -51,7 +52,7 @@ Pliki nag³ówkowe biblioteki osgcal.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT%{_prefix}
+	DESTDIR=$RPM_BUILD_ROOT
 
 find $RPM_BUILD_ROOT%{_prefix} -name CVS -type d |xargs rm -fr
 
@@ -62,12 +63,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog *.txt
-%attr(755,root,root) %{_libdir}/lib*.so
-#%attr(755,root,root) %{_libdir}/osgPlugins/*.so
+%doc README ChangeLog
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/usage.txt
 %{_includedir}/osgCal
 %{_pkgconfigdir}/*.pc
+%{_libdir}/lib*.so
+%{_libdir}/lib*.la
+
+#%{_libdir}/lib*.a
