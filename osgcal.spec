@@ -25,7 +25,7 @@ animated characters.
 
 %description -l pl
 osgCal jest adapterem cal3d do wykorzystania wewn±trz OpenSceneGraph,
-udostêpniaj±cym bibliotekê i wtyczki pozwal±ce wstawiaæ nowe obiekty
+udostêpniaj±cym bibliotekê i wtyczki pozwalaj±ce wstawiaæ nowe obiekty
 do OSG w animowanych postaciach.
 
 %package devel
