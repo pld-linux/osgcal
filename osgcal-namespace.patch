@@ -1,0 +1,12 @@
+diff -Nur osgcal-0.1.28.orig/include/osgCal/SubMeshSoftware osgcal-0.1.28/include/osgCal/SubMeshSoftware
+--- osgcal-0.1.28.orig/include/osgCal/SubMeshSoftware	2004-10-13 10:54:16.000000000 +0200
++++ osgcal-0.1.28/include/osgCal/SubMeshSoftware	2005-03-04 22:24:24.440900040 +0100
+@@ -71,7 +71,7 @@
+   virtual void drawImplementation(osg::State& state) const;
+   virtual bool computeBound() const;
+ 
+-  inline virtual bool supports(PrimitiveFunctor&) const { return _supportsPrimitiveFunctor; }
++  inline virtual bool supports(osg::PrimitiveFunctor&) const { return _supportsPrimitiveFunctor; }
+ 
+   // no bounding box, no picking if set to false (saves lots of computing)
+   inline void setSupportsPrimitiveFunctor(bool supportsPrimitiveFunctor) { _supportsPrimitiveFunctor = supportsPrimitiveFunctor; }
