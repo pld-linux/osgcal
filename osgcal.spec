@@ -15,6 +15,7 @@ BuildRequires:	automake
 BuildRequires:	docbook-utils
 BuildRequires:	doxygen
 BuildRequires:	libtool
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,8 +43,15 @@ Pliki nag³ówkowe biblioteki osgcal.
 %prep
 %setup -q
 %patch0 -p1
+sed '/producer/s/0\.9\.8/0.8,5/' \
+	-i configure.ac
 
 %build
+%{__libtoolize}
+%{__aclocal} -I ./config
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make} \
 	CXXFLAGS="-I../../include -I../include %{rpmcflags}"
