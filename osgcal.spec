@@ -19,20 +19,20 @@ BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-osgCal is an adapter of cal3d for use inside OpenSceneGraph, providing a
-library and a nodekit that allow inserting new nodes in OSG with animated
-characters.
+osgCal is an adapter of cal3d for use inside OpenSceneGraph, providing
+a library and a nodekit that allow inserting new nodes in OSG with
+animated characters.
 
 %description -l pl
 osgCal jest adapterem cal3d do wykorzystania wewn±trz OpenSceneGraph,
-udostêpniaj±cym bibliotekê i wtyczki pozwal±ce wstawiaæ nowe obiekty do OSG w
-animowanych postaciach.
+udostêpniaj±cym bibliotekê i wtyczki pozwal±ce wstawiaæ nowe obiekty
+do OSG w animowanych postaciach.
 
 %package devel
 Summary:	Header files for osgcal library
 Summary(pl):	Pliki nag³ówkowe biblioteki osgcal
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for osgcal library.
