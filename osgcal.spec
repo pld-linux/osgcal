@@ -1,12 +1,15 @@
+%define		snap 20040629
 Summary:	Cal3D adapter for OpenSceneGraph
 Summary(pl):	Adapter Cal3D dla OpenSceneGraph
 Name:		osgcal
 Version:	0.1.4
-Release:	1
+Release:	1.%{snap}.1
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	c802e5b18824e022aa8d76fc02dcbd53
+# from cvs.gna.org/cvs/underware
+Source0:	%{name}-%{snap}.tar.gz
+# Source0-md5:	d940588c9c74ab2812174cf5569c4967
+# Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 URL:		http://osgcal.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -52,6 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 
 find $RPM_BUILD_ROOT%{_prefix} -name CVS -type d |xargs rm -fr
 
+install -D %{name}.pc $RPM_BUILD_ROOT%{_pkgconfigdir}/%{name}.pc
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -59,9 +64,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changelog *.txt
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/osgPlugins/*.so
+#%attr(755,root,root) %{_libdir}/osgPlugins/*.so
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/usage.txt
 %{_includedir}/osgCal
+%{_pkgconfigdir}/*.pc
