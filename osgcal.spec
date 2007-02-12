@@ -1,5 +1,5 @@
 Summary:	Cal3D adapter for OpenSceneGraph
-Summary(pl):	Adapter Cal3D dla OpenSceneGraph
+Summary(pl.UTF-8):   Adapter Cal3D dla OpenSceneGraph
 Name:		osgcal
 Version:	0.1.28
 Release:	1
@@ -19,22 +19,22 @@ osgCal is an adapter of cal3d for use inside OpenSceneGraph, providing
 a library and a nodekit that allow inserting new nodes in OSG with
 animated characters.
 
-%description -l pl
-osgCal jest adapterem cal3d do wykorzystania wewn±trz OpenSceneGraph,
-udostêpniaj±cym bibliotekê i wtyczki pozwalaj±ce wstawiaæ nowe obiekty
+%description -l pl.UTF-8
+osgCal jest adapterem cal3d do wykorzystania wewnÄ…trz OpenSceneGraph,
+udostÄ™pniajÄ…cym bibliotekÄ™ i wtyczki pozwalajÄ…ce wstawiaÄ‡ nowe obiekty
 do OSG w animowanych postaciach.
 
 %package devel
 Summary:	Header files for osgcal library
-Summary(pl):	Pliki nag³ówkowe biblioteki osgcal
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki osgcal
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for osgcal library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki osgcal.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki osgcal.
 
 %prep
 %setup -q
