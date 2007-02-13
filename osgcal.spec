@@ -1,5 +1,5 @@
 Summary:	Cal3D adapter for OpenSceneGraph
-Summary(pl.UTF-8):   Adapter Cal3D dla OpenSceneGraph
+Summary(pl.UTF-8):	Adapter Cal3D dla OpenSceneGraph
 Name:		osgcal
 Version:	0.1.28
 Release:	1
@@ -26,7 +26,7 @@ do OSG w animowanych postaciach.
 
 %package devel
 Summary:	Header files for osgcal library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki osgcal
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki osgcal
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
